@@ -12,6 +12,7 @@
     <modules>
         <!--服务注册中心-->
         <module>eureka-server</module>
+        <module>algorithm-server</module>
     </modules>
 
     <parent>
