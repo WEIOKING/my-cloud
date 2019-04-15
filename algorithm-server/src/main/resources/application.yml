@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: algorithm-server
+  jackson:
+    date-format: yyyy-MM-dd HH-mm-ss
+    time-zone: GMT+8
+server:
+  port: 7100
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone:  http://localhost:7000
