@@ -1,11 +1,17 @@
 spring:
   application:
-    name: algorithm-server
+    name: config-server
   jackson:
     date-format: yyyy-MM-dd HH-mm-ss
     time-zone: GMT+8
+  cloud:
+    config:
+      enabled: true
+      server:
+        git:
+          uri:
 server:
-  port: 7100
+  port: 7001
 eureka:
   instance:
     prefer-ip-address: true
