@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * @Author:ply
- * @Description:
+ * @Description: Lambda表达式测试
  * @Date: created in 2019/5/10
  * @Modified By:
  */
@@ -14,14 +14,15 @@ public class Lambda {
     public static void main(String[] args) {
 
         Math sum = (a, b) -> a + b;
+        //多行语句用大括号包起来
         Math sub = (a, b) -> {
             System.out.println("多行语句");
             return a -b;
         };
-        Math mul = (Double a, Double b) -> a * b;
+        Math mul = (Integer a, Integer b) -> a * b;
         Math div = (a, b) -> a / b;
-        Double a = 2.5d;
-        Double b = 2.5d;
+        Integer a = 2;
+        Integer b = 2;
         System.out.println(a + " + " + b + " = " + sum.operation(a, b));
         System.out.println(a + " - " + b + " = " + sub.operation(a, b));
         System.out.println(a + " * " + b + " = " + mul.operation(a, b));
@@ -41,14 +42,15 @@ public class Lambda {
         new Thread(() -> System.out.println("Lambda!!!")).start();
 
         List<Integer> list = new ArrayList<>();
-        List<Integer> integers = Arrays.asList(new Integer[]{1, 2, 3, 4, 5});
+        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
         //Lambda内部不能修改外部变量的值
         //Lambda表达式中可以向外部list添加元素
         integers.forEach(integer -> {
 //            a = 0d;
             System.out.println(a);
-            list.add(mul.operation(Double.valueOf(integer),Double.valueOf(integer)).intValue());
+            list.add(mul.operation(integer, integer));
         });
+        //方法引用
         list.forEach(System.out :: println);
 
     }
@@ -66,7 +68,7 @@ public class Lambda {
          * @param b
          * @return
          */
-        Double operation(Double a, Double b);
+        Integer operation(Integer a, Integer b);
 
         /**
          * 函数式接口中允许存在默认方法
