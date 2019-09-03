@@ -19,39 +19,41 @@ public class Stream {
         List<Integer> integers = Arrays.asList(2, 3, 4, 1, 2, 3, 5, 6, 9, 8);
 
         System.out.println("初始状态:");
-        integers.forEach(System.out::print);
+        integers.forEach(System.out::println);
         System.out.println();
 
         //sorted 方法对数据流进行排序
         System.out.println("排序后:");
-        integers.stream().sorted(Comparator.comparing(Function.identity())).forEach(System.out::print);
+        integers.stream().sorted(Comparator.comparing(Function.identity())).forEach(System.out::println);
         System.out.println();
 
         //filter 方法对数据流进行过滤
         System.out.println("筛选大于4的结果:");
-        integers.stream().filter(i -> i > 4).forEach(System.out::print);
+        integers.stream().filter(i -> i > 4).forEach(System.out::println);
         System.out.println();
 
         //parallelStream 流并行处理
         System.out.println("并行流筛选大于4的结果:");
-        integers.parallelStream().filter(i -> i > 4).forEach(System.out::print);
+        integers.parallelStream().filter(i -> i > 4).forEach(System.out::println);
         System.out.println();
 
         //map 映射结果
         System.out.println("每个数求平方:");
-        integers.stream().map(i -> i * i).forEach(System.out::print);
+        integers.stream().map(i -> i * i).forEach(System.out::println);
         System.out.println();
 
         //distinct 去重
         System.out.println("去重:");
-        integers.stream().distinct().forEach(System.out::print);
+        integers.stream().distinct().forEach(System.out::println);
         System.out.println();
 
         //Collectors 可用于返回列表或字符串
         System.out.println("合并字符串:");
         List<String> list = integers.stream().map(i -> Integer.toString(i * i)).collect(Collectors.toList());
         String collect = list.stream().collect(Collectors.joining(","));
+        String collect1= String.join(",", list);
         System.out.println(collect);
+        System.out.println(collect1);
 
         //统计
         System.out.println("统计:");
