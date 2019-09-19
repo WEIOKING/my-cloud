@@ -39,6 +39,7 @@ public class ZConvert {
         if (numRows == 1){
             return s;
         }
+        //创建stringBuilder的数组，长度为字符串长度和转换行数较小的一个，并初始化数组
         int min = Math.min(s.length(), numRows);
         List<StringBuilder> builders = new ArrayList<>(min);
         for (int i = 0; i < min; i++) {
@@ -46,11 +47,15 @@ public class ZConvert {
         }
         int curRow = 0;
         boolean flag = false;
+        //遍历字符串
         for (int i = 0; i < s.length(); i++) {
+            //将字符放入对应builder中
             builders.get(curRow).append(s.charAt(i));
+            //如果行数为第一或最后一行，标志取反
             if (curRow == 0 || curRow == builders.size() - 1){
                 flag = !flag;
             }
+            //根据标志状态判断当前行加1或减1
             curRow += flag ? 1 : -1;
         }
         StringBuilder stringBuilder = new StringBuilder();
