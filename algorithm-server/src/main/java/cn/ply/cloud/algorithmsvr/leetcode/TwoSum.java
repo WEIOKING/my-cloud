@@ -48,12 +48,18 @@ public class TwoSum {
      * @return
      */
     public static int[] hash(int[] numList, int target) {
+        //key 为数值， value 为数在list中的索引
         HashMap<Integer, Integer> hashMap = new HashMap<>(numList.length);
+        //遍历数组
         for (int i = 0, l = numList.length; i < l; i++) {
+            //map中找 target - 当前数 的key
             Integer integer = hashMap.get(target - numList[i]);
+            //找到了说明这个数 + 当前数 = target
             if (integer != null) {
+                //返回索引
                 return new int[]{integer, i};
             }
+            //没找到将当前数放入map
             hashMap.put(numList[i], i);
         }
         throw new IllegalArgumentException("没有找到符合要求的数！");
