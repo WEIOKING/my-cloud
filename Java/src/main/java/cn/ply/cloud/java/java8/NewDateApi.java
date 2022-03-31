@@ -45,7 +45,7 @@ public class NewDateApi {
         System.out.println(yyyyMMdd);
 
         //获取单个年月日
-        System.out.println(localDateTime.getYear() + "年" + localDateTime.getMonth() + "月" + localDateTime.getDayOfMonth() + "日" + localDateTime.getHour() + "时" );
+        System.out.println(localDateTime.getYear() + "年" + localDateTime.getMonthValue() + "月" + localDateTime.getDayOfMonth() + "日" + localDateTime.getHour() + "时" );
 
         //设置年月日,会返回一个新的时间对象，原有对象不会改变
         LocalDateTime localDateTime1 = localDateTime.withYear(2018).withHour(12);

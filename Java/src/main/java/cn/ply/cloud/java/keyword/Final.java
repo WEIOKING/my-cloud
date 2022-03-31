@@ -59,8 +59,8 @@ public class Final {
          * @param poppet
          */
         void with(final Poppet poppet, final int i){
-            //poppet = new Poppet(1); //Cannot assign a value to final variable 'poppet'
-            //i ++; //Cannot assign a value to final variable 'i'
+//            poppet = new Poppet(1); //Cannot assign a value to final variable 'poppet'
+//            i ++; //Cannot assign a value to final variable 'i'
         }
 
         void without(Poppet poppet, int i){
