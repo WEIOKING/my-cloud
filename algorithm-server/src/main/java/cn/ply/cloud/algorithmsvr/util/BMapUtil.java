@@ -1,7 +1,7 @@
 package cn.ply.cloud.algorithmsvr.util;
 
 /**
- * @Author:liyang
+ * @Author:ply
  * @Description:
  * @Date: created in 2018/3/3
  * @Modified By:

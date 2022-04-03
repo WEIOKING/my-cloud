@@ -1,5 +1,6 @@
 package cn.ply.cloud.java.regex;
 
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 /**
@@ -10,7 +11,6 @@ import java.util.regex.Pattern;
  */
 public class Regex {
     public static void main(String[] args) {
-
         //将字符串转化为普通字符串，匹配时，不会当做正则表达式处理
         String quote = Pattern.quote("(");
     }
