@@ -12,6 +12,8 @@
     <modules>
         <!--服务注册中心-->
         <module>eureka-server</module>
+        <module>cloud-server</module>
+        <module>web-server</module>
         <module>algorithm-server</module>
         <module>config-server</module>
         <module>Java</module>
